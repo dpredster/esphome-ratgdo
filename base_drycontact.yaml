@@ -5,7 +5,7 @@ esphome:
 external_components:
   - source:
       type: git
-      url: https://github.com/ratgdo/esphome-ratgdo
+      url: https://github.com/dpredster/esphome-ratgdo
       ref: main
     refresh: 1s
   # - source:
@@ -107,3 +107,4 @@ button:
       then:
         lambda: !lambda |-
           id($id_prefix).door_toggle();
+

@@ -27,11 +27,11 @@ esp32:
     type: arduino
 
 dashboard_import:
-  package_import_url: github://ratgdo/esphome-ratgdo/v32board_drycontact.yaml@main
+  package_import_url: github://dpredster/esphome-ratgdo/v32board_drycontact.yaml@main
 
 packages:
   remote_package:
-    url: https://github.com/ratgdo/esphome-ratgdo
+    url: https://github.com/dpredster/esphome-ratgdo
     ref: main
     files: [base_drycontact.yaml]
     refresh: 1s
@@ -78,3 +78,4 @@ switch:
     on_turn_on:
     - delay: 250ms
     - switch.turn_off: party_mode
+

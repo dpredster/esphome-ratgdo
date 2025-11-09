@@ -29,11 +29,11 @@ esp32:
     type: arduino
 
 dashboard_import:
-  package_import_url: github://ratgdo/esphome-ratgdo/v32disco.yaml@main
+  package_import_url: github://dpredster/esphome-ratgdo/v32disco.yaml@main
 
 packages:
   remote_package:
-    url: https://github.com/ratgdo/esphome-ratgdo
+    url: https://github.com/dpredster/esphome-ratgdo
     ref: main
     files: [base.yaml]
     refresh: 1s
@@ -153,3 +153,4 @@ sensor:
     #     min_value: 0
     #     max_value: 100
     # unit_of_measurement: "%"
+
