@@ -774,10 +774,10 @@ namespace ratgdo {
         auto name = "door_state" + std::to_string(num++);
 
         this->door_state.subscribe([this, f, name](DoorState state) {
-            defer(name, [this, f, state] { f(state, *this->door_position); });
+            defer(name.c_str(), [this, f, state] { f(state, *this->door_position); });
         });
         this->door_position.subscribe([this, f, name](float position) {
-            defer(name, [this, f, position] { f(*this->door_state, position); });
+            defer(name.c_str(), [this, f, position] { f(*this->door_state, position); });
         });
     }
     void RATGDOComponent::subscribe_light_state(std::function<void(LightState)>&& f)
@@ -817,7 +817,7 @@ namespace ratgdo {
         static int num = 0;
         auto name = "door_action_delayed" + std::to_string(num++);
 
-        this->door_action_delayed.subscribe([this, f = std::move(f), name](DoorActionDelayed state) { defer(name, [f, state] { f(state); }); });
+        this->door_action_delayed.subscribe([this, f = std::move(f), name](DoorActionDelayed state) { defer(name.c_str(), [f, state] { f(state); }); });
     }
 #ifdef RATGDO_USE_DISTANCE_SENSOR
     void RATGDOComponent::subscribe_distance_measurement(std::function<void(int16_t)>&& f)
