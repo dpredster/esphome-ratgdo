@@ -389,10 +389,12 @@ namespace ratgdo {
         if (duration == 0) {
             return;
         }
-        auto count = int(1000 * duration / update_period);
-        set_retry("position_sync_while_moving", update_period, count, [this](uint8_t r) {
+        // Use set_timeout to stop the interval after the duration
+        set_interval("position_sync_while_moving", update_period, [this]() {
             this->door_position_update();
-            return RetryResult::RETRY;
+        });
+        set_timeout("position_sync_timeout", duration * 1000, [this]() {
+            cancel_interval("position_sync_while_moving");
         });
     }
 
@@ -708,7 +710,8 @@ namespace ratgdo {
         if (this->door_start_moving != 0) {
             ESP_LOGD(TAG, "Cancelling position callbacks");
             cancel_timeout("move_to_position");
-            cancel_retry("position_sync_while_moving");
+            cancel_timeout("position_sync_timeout");
+            cancel_interval("position_sync_while_moving");
 
             this->door_start_moving = 0;
             this->door_start_position = DOOR_POSITION_UNKNOWN;
