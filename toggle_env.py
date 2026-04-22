@@ -31,7 +31,7 @@ def toggle_env(mode, ref="softserial-killer"):
                 if mode == "local":
                     packages_block = f"""packages:
   # remote_package:
-  #   url: https://github.com/ratgdo/esphome-ratgdo
+  #   url: https://github.com/dpredster/esphome-ratgdo
   #   ref: {ref}
   #   files: [{base_file}]
   #   refresh: 1s
@@ -40,7 +40,7 @@ def toggle_env(mode, ref="softserial-killer"):
                 else:
                     packages_block = f"""packages:
   remote_package:
-    url: https://github.com/ratgdo/esphome-ratgdo
+    url: https://github.com/dpredster/esphome-ratgdo
     ref: {ref}
     files: [{base_file}]
     refresh: 1s
@@ -61,7 +61,7 @@ def toggle_env(mode, ref="softserial-killer"):
                 ext_block = f"""external_components:
   # - source:
   #     type: git
-  #     url: https://github.com/ratgdo/esphome-ratgdo
+  #     url: https://github.com/dpredster/esphome-ratgdo
   #     ref: {ref}
   #   refresh: 1s
   - source:
@@ -71,7 +71,7 @@ def toggle_env(mode, ref="softserial-killer"):
                 ext_block = f"""external_components:
   - source:
       type: git
-      url: https://github.com/ratgdo/esphome-ratgdo
+      url: https://github.com/dpredster/esphome-ratgdo
       ref: {ref}
     refresh: 1s
   # - source:
@@ -86,8 +86,8 @@ def toggle_env(mode, ref="softserial-killer"):
             )
         # 3. Handle dashboard_import branch suffix update
         new_content = re.sub(
-            r"package_import_url: github://ratgdo/esphome-ratgdo/([^@\n]+)(?:@[^\n]+)?",
-            f"package_import_url: github://ratgdo/esphome-ratgdo/\\1@{ref}",
+            r"package_import_url: github://dpredster/esphome-ratgdo/([^@\n]+)(?:@[^\n]+)?",
+            f"package_import_url: github://dpredster/esphome-ratgdo/\\1@{ref}",
             new_content,
         )
 
