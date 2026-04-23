@@ -31,7 +31,7 @@ packages:
   remote_package:
     url: https://github.com/dpredster/esphome-ratgdo
     files: [base_drycontact.yaml]
-    refresh: 1s
+    refresh: 1d
   # remote_package: !include
   #   file: base_drycontact.yaml
 

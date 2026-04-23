@@ -34,7 +34,7 @@ packages:
     url: https://github.com/dpredster/esphome-ratgdo
     ref: main
     files: [base_secplusv1.yaml]
-    refresh: 1s
+    refresh: 1d
   # remote_package: !include
   #   file: base_secplusv1.yaml
 

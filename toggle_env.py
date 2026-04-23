@@ -34,7 +34,7 @@ def toggle_env(mode, ref="softserial-killer"):
   #   url: https://github.com/dpredster/esphome-ratgdo
   #   ref: {ref}
   #   files: [{base_file}]
-  #   refresh: 1s
+    #   refresh: 1d
   remote_package: !include
     file: {base_file}"""
                 else:
@@ -43,7 +43,7 @@ def toggle_env(mode, ref="softserial-killer"):
     url: https://github.com/dpredster/esphome-ratgdo
     ref: {ref}
     files: [{base_file}]
-    refresh: 1s
+        refresh: 1d
   # remote_package: !include
   #   file: {base_file}"""
 
@@ -63,7 +63,7 @@ def toggle_env(mode, ref="softserial-killer"):
   #     type: git
   #     url: https://github.com/dpredster/esphome-ratgdo
   #     ref: {ref}
-  #   refresh: 1s
+    #   refresh: 1d
   - source:
       type: local
       path: components"""
@@ -73,7 +73,7 @@ def toggle_env(mode, ref="softserial-killer"):
       type: git
       url: https://github.com/dpredster/esphome-ratgdo
       ref: {ref}
-    refresh: 1s
+        refresh: 1d
   # - source:
   #     type: local
   #     path: components"""
